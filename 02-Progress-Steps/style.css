@@ -1,0 +1,110 @@
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,400&display=swap');
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+     :root {
+        --line-border-fill: #3498db;
+        --line-border-empty: #e0e0e0;
+    }
+    
+    body {
+        font-family: 'Open Sans', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+        margin: 0;
+    }
+    
+    .container {
+        text-align: center;
+    }
+    
+    .progress-container {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        margin-bottom: 30px;
+        max-width: 100%;
+        width: 400px;
+    }
+    /*line behind the progress bar*/
+    
+    .progress-container::before {
+        content: '';
+        background-color: #e0e0e0;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        height: 4px;
+        width: 100%;
+        z-index: -1;
+        transition: 0.4 ease;
+    }
+    /*progress bar*/
+    
+    .progress {
+        background-color: var(--line-border-fill);
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        height: 4px;
+        width: 0%;
+        /*width: 0 at the beginning of progress*/
+        z-index: -1;
+        transition: 0.4 ease;
+    }
+    
+    .circle {
+        background-color: #fff;
+        color: #999;
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid var(--line-border-empty);
+        transition: .4s ease;
+    }
+    
+    .circle.active {
+        border-color: #3498db;
+    }
+    
+    .btn {
+        background-color: var(--line-border-fill);
+        border: 0;
+        border-radius: 5px;
+        padding: 8px 30px;
+        margin: 5px;
+        color: #fff;
+        transition: .4s ease;
+        cursor: pointer;
+        font-family: inherit;
+    }
+    
+    .btn:hover {
+        color: #fff;
+        background-color: #2fd619;
+    }
+    
+    .btn:active {
+        transform: scale(1.05);
+    }
+    
+    .btn:focus {
+        outline: 0;
+    }
+    
+    .btn:disabled {
+        background-color: var(--line-border-empty);
+        cursor: not-allowed;
+    }
