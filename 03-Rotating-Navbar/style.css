@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,400&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    overflow-x: hidden;
+    /*no scrollbar when navbar opens*/
+    background-color: #333;
+    color: #222;
+    margin: 0;
+}
+
+.container {
+    background-color: #fafafa;
+    transform-origin: top left;
+    /*adjust the rotation point*/
+    transition: transform 0.5s ease-out;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 50px;
+}
+
+.container.show-nav {
+    transform: rotate(-20deg);
+}
+
+.container.show-nav+nav li {
+    transform: translateX(0);
+    transition-delay: 0.3s;
+}
+
+nav {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    z-index: 100;
+}
+
+nav ul {
+    list-style-type: none;
+    padding-left: 30px;
+}
+
+nav ul li {
+    text-transform: uppercase;
+    color: #fff;
+    margin: 30px 5px;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in;
+}
+
+nav ul li i {
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+
+/*nav step effect*/
+
+nav ul li+li {
+    margin-left: 20px;
+    transform: translateX(-120%);
+}
+
+nav ul li+li+li {
+    margin-left: 40px;
+    transform: translateX(-160%);
+}
+
+.circle-container {
+    position: fixed;
+    top: -100px;
+    left: -100px;
+}
+
+.container.show-nav .circle {
+    transform: rotate(-70deg);
+}
+
+.circle {
+    background-color: #ff7979;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    position: relative;
+    /*position the button inside absolute*/
+    transition: transform 0.5s ease-out;
+}
+
+.circle button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100px;
+    background: transparent;
+    border: 0;
+    font-size: 25px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.circle button:focus {
+    outline: none;
+}
+
+#open {
+    left: 60%;
+}
+
+#close {
+    top: 60%;
+    transform: rotate(90deg);
+    transform-origin: top left;
+}
+
+.content {
+    margin: 50px auto;
+}
+
+.content small {
+    font-style: italic;
+    color: #555;
+}
+
+.content p {
+    color: #333;
+    line-height: 1.7em;
+}
