@@ -30,7 +30,7 @@
         cursor: pointer;
         margin: 10px;
         position: relative;
-        /*transition for flip effect*/
+        /*transition for expand effect*/
         transition: flex 0.7s ease-in;
         flex: 0.5;
     }
